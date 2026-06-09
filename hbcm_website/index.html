@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>河北初梅文化传媒有限公司 - 一站式全链条广告服务商</title>
+    <!-- 引入阿里图标库，免费图标，无需本地文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        body {
+            color: #333;
+            background: #f9f9f9;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* 导航栏 */
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 99;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 24px;
+            color: #f39c12;
+        }
+
+        /* 顶部横幅轮播区域 */
+        .banner {
+            background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.85)), 
+                        url("https://picsum.photos/id/1048/1920/600") center/cover no-repeat;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .banner h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .banner p {
+            font-size: 18px;
+            opacity: 0.95;
+        }
+
+        /* 通用模块样式 */
+        .section {
+            padding: 60px 0;
+            background: white;
+            margin: 30px 0;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 26px;
+            margin-bottom: 40px;
+            color: #2c3e50;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            width: 70px;
+            height: 3px;
+            background: #f39c12;
+            display: block;
+            margin: 12px auto 0;
+        }
+
+        /* 公司介绍 图文布局 */
+        .about-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .about-img {
+            flex: 1 1 400px;
+        }
+
+        .about-img img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .about-text {
+            flex: 1 1 400px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+        /* 主营服务板块 图标+卡片 */
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+        }
+
+        .service-item {
+            width: 250px;
+            background: #f8f9fa;
+            padding: 30px 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 18px rgba(0,0,0,0.1);
+        }
+
+        .service-item .icon {
+            font-size: 42px;
+            color: #f39c12;
+            margin-bottom: 15px;
+        }
+
+        .service-item h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .service-item p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* 核心优势 */
+        .advantage {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .adv-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .adv-item i {
+            font-size: 24px;
+            color: #27ae60;
+            margin-top: 3px;
+        }
+
+        .adv-item p {
+            color: #444;
+            font-size: 15px;
+        }
+
+        /* 联系我们 */
+        .contact {
+            text-align: center;
+            font-size: 17px;
+        }
+
+        .contact .contact-item {
+            display: inline-block;
+            margin: 12px 20px;
+        }
+
+        .contact i {
+            font-size: 22px;
+            color: #e74c3c;
+            margin-right: 8px;
+        }
+
+        .contact strong {
+            color: #2c3e50;
+        }
+
+        /* 底部 */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 5px 0;
+            opacity: 0.9;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .banner h1 {
+                font-size: 24px;
+            }
+            .banner p {
+                font-size: 16px;
+            }
+            .service-item {
+                width: 100%;
+                max-width: 320px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <div class="container">
+            <div class="nav">
+                <div class="logo">
+                    <i class="fa-solid fa-bullhorn"></i>
+                    河北初梅文化传媒有限公司
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 顶部横幅 -->
+    <div class="banner">
+        <div class="container">
+            <h1>一站式全链条广告服务商</h1>
+            <p>创意设计 · 精工制作 · 上门安装 · 全程落地 | 服务石家庄全域</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- 公司介绍 图文板块 -->
+        <div class="section">
+            <h2 class="section-title">公司简介</h2>
+            <div class="about-wrap">
+                <div class="about-img">
+                    <img src="https://picsum.photos/id/1031/800/600" alt="公司实景">
+                </div>
+                <div class="about-text">
+                    <p>河北初梅文化传媒有限公司，是石家庄本地专业的一站式全链条广告服务商。我们深耕广告行业多年，专注于广告物料创意设计、精工制作、上门安装全流程落地服务。</p>
+                    <p>公司配备专属设计团队与专业施工班组，打破行业多方对接的繁琐流程，从前期方案沟通、定稿，到中期生产制作、后期安装交付，全程专人跟进，一站式帮您完成品牌形象落地。</p>
+                    <p>业务服务范围覆盖石家庄全域，始终坚持靠谱省心、保质保量的服务理念，为各大商户、企业提供高性价比的广告解决方案。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 主营项目 图标卡片 -->
+        <div class="section">
+            <h2 class="section-title">主营项目</h2>
+            <div class="services">
+                <div class="service-item">
+                    <div class="icon"><i class="fa-solid fa-store"></i></div>
+                    <h3>门头招牌</h3>
+                    <p>各类商铺门头设计、制作、一体化安装</p>
+                </div>
+                <div class="service-item">
+                    <div class="icon"><i class="fa-solid fa-lightbulb"></i></div>
+                    <h3>发光字</h3>
+                    <p>树脂字、无边字、冲孔字等各类发光标识</p>
+                </div>
+                <div class="service-item">
+                    <div class="icon"><i class="fa-solid fa-paintbrush"></i></div>
+                    <h3>企业文化墙</h3>
+                    <p>形象墙、文化墙、荣誉墙定制打造</p>
+                </div>
+                <div class="service-item">
+                    <div class="icon"><i class="fa-solid fa-signs-post"></i></div>
+                    <h3>标识导视</h3>
+                    <p>园区导视、科室牌、立式指引标识</p>
+                </div>
+                <div class="service-item">
+                    <div class="icon"><i class="fa-solid fa-print"></i></div>
+                    <h3>喷绘写真</h3>
+                    <p>海报、背胶、展板、展架等画面制作</p>
+                </div>
+                <div class="service-item">
+                    <div class="icon"><i class="fa-solid fa-cubes"></i></div>
+                    <h3>展会物料</h3>
+                    <p>展会搭建、桁架、背景板、配套物料</p>
+                </div>
+                <div class="service-item">
+                    <div class="icon"><i class="fa-solid fa-party-horn"></i></div>
+                    <h3>活动布置</h3>
+                    <p>开业、庆典、会议等现场整体布置</p>
+                </div>
+                <div class="service-item">
+                    <div class="icon"><i class="fa-solid fa-sitemap"></i></div>
+                    <h3>全品类广告</h3>
+                    <p>各类广告项目一站式设计制作安装</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 核心优势 图标列表 -->
+        <div class="section">
+            <h2 class="section-title">服务优势</h2>
+            <div class="advantage">
+                <div class="adv-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <p>自有专业设计团队，创意方案贴合品牌需求</p>
+                </div>
+                <div class="adv-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <p>自有施工班组，上门安装专业高效</p>
+                </div>
+                <div class="adv-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <p>全流程一站式服务，省去多方对接麻烦</p>
+                </div>
+                <div class="adv-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <p>全程专人跟进，从设计到落地无忧交付</p>
+                </div>
+                <div class="adv-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <p>服务覆盖石家庄全域，响应迅速</p>
+                </div>
+                <div class="adv-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <p>保质保量、价格透明，售后有保障</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 联系我们 -->
+        <div class="section">
+            <h2 class="section-title">联系我们</h2>
+            <div class="contact">
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    咨询热线：<strong>18942627186</strong>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-map-marker-alt"></i>
+                    公司地址：<strong>河北省裕华区和平大厦A座6层</strong>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-building"></i>
+                    服务区域：<strong>石家庄全域</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部版权 -->
+    <footer>
+        <div class="container">
+            <p>河北初梅文化传媒有限公司 © 2026 版权所有</p>
+            <p>一站式全链条广告服务商 | 设计 · 制作 · 安装 全程服务</p>
+        </div>
+    </footer>
+
+    <script>
+        // 卡片hover动画增强
+        const serviceItems = document.querySelectorAll('.service-item');
+        serviceItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.backgroundColor = '#f39c12';
+                item.querySelector('h3').style.color = '#fff';
+                item.querySelector('p').style.color = '#fff';
+                item.querySelector('.icon').style.color = '#fff';
+            })
+            item.addEventListener('mouseleave', () => {
+                item.style.backgroundColor = '#f8f9fa';
+                item.querySelector('h3').style.color = '#2c3e50';
+                item.querySelector('p').style.color = '#666';
+                item.querySelector('.icon').style.color = '#f39c12';
+            })
+        })
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
